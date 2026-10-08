@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #f8faf8;
+  --color-surface: rgba(255, 255, 255, 0.9);
+  --color-surface-hover: rgba(255, 255, 255, 1);
+  --color-border: rgba(20, 83, 45, 0.12);
+  --color-primary: #0f1f0f;
+  --color-secondary: #4b6b52;
+  --color-accent: #16a34a;
+  --color-accent-soft: #22c55e;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+    font-family: Inter, "Segoe UI", sans-serif;
+    background-color: #f0f7f1;
+    color: #0f1f0f;
+    background-image:
+      radial-gradient(circle at top left, rgba(34, 197, 94, 0.10), transparent 40%),
+      radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.08), transparent 40%);
+  }
+
+  * { box-sizing: border-box; }
+
+  select { color: #0f1f0f !important; background-color: white !important; }
+  select option { color: #0f1f0f !important; background-color: white !important; }
+
+  a, button { -webkit-tap-highlight-color: transparent; }
+
+  img, video { display: block; max-width: 100%; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Main card — white with green-tinted border */
+  .glass-card {
+    @apply rounded-[24px] border bg-white shadow-[0_4px_24px_rgba(20,83,45,0.08)];
+    border-color: rgba(20, 83, 45, 0.10);
+  }
+
+  /* Button */
+  .glass-button {
+    @apply inline-flex items-center justify-center rounded-full border px-6 py-3 text-sm font-medium transition-all;
+    border-color: rgba(20, 83, 45, 0.15);
+    background: white;
+    color: #0f1f0f;
+  }
+  .glass-button:hover {
+    background: #f0fdf4;
+    border-color: rgba(22, 163, 74, 0.3);
+  }
+
+  /* Input */
+  .glass-input {
+    @apply w-full rounded-2xl border px-4 py-3 text-sm transition-all outline-none;
+    background: white;
+    border-color: rgba(20, 83, 45, 0.15);
+    color: #0f1f0f;
+  }
+  .glass-input::placeholder { color: #9ab09e; }
+  .glass-input option { background: white !important; color: #0f1f0f !important; }
+  select.glass-input { color: #0f1f0f !important; background-color: white !important; }
+  .glass-input:focus {
+    border-color: #16a34a;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
+  }
+
+  /* Field input (teacher panel forms) */
+  .field-input {
+    @apply w-full rounded-xl border px-3.5 py-2.5 text-sm transition-all outline-none;
+    background: #f8faf8;
+    border-color: rgba(20, 83, 45, 0.15);
+    color: #0f1f0f;
+  }
+  .field-input::placeholder { color: #9ab09e; }
+  .field-input:focus {
+    border-color: #16a34a;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.10);
+  }
+  .field-input option { background: white; color: #0f1f0f; }
+
+  /* Text colors */
+  .text-secondary { color: #1a3a1f; }
+  .text-primary { color: #0f1f0f; }
+  .bg-background { background-color: #f0f7f1; }
+  .border-border { border-color: rgba(20, 83, 45, 0.10); }
+}

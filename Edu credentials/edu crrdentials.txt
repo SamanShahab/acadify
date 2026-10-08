@@ -1,0 +1,38 @@
+
+## Login credentials for the seeded demo accounts
+
+These are the real seeded roles in the active app database:
+
+- Admin
+  - Email: [admin@nexus.edu](mailto:admin@nexus.edu)
+  - Password: Admin123!
+
+- Teacher
+  - Email: [teacher@nexus.edu](mailto:teacher@nexus.edu)
+  - Password: Teacher123!
+
+- Parent
+  - Email: [parent@nexus.edu](mailto:parent@nexus.edu)
+  - Password: Parent123!
+
+- Parent 2
+  - Email: [parent2@nexus.edu](mailto:parent2@nexus.edu)
+  - Password: Parent123!
+
+- Student
+  - Email: [alex.vance@nexus.edu](mailto:alex.vance@nexus.edu)
+  - Password: Student123!
+-student 
+mk1750731@gmail.com
+password maazkhan
+
+- Additional student examples
+  - [elena.r@nexus.edu](mailto:elena.r@nexus.edu) / Student123!
+  - [marcus.c@nexus.edu](mailto:marcus.c@nexus.edu) / Student123!
+  - [sophia.m@nexus.edu](mailto:sophia.m@nexus.edu) / Student123!
+  - [liam.t@nexus.edu](mailto:liam.t@nexus.edu) / Student123!
+  - [aria.t@nexus.edu](mailto:aria.t@nexus.edu) / Student123!
+  - [david.kim@nexus.edu](mailto:david.kim@nexus.edu) / Student123!
+  - [maya.lin@nexus.edu](mailto:maya.lin@nexus.edu) / Student123!
+  - [oliver.q@nexus.edu](mailto:oliver.q@nexus.edu) / Student123!
+

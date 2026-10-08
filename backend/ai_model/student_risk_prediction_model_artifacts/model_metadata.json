@@ -1,0 +1,22 @@
+{
+    "model_name": "Student Risk & Performance Prediction Model",
+    "version": "1.1",
+    "creation_date": "2026-08-17T17:40:11.519100",
+    "classifier_metrics": {
+        "accuracy": 0.881,
+        "macro_f1": 0.8669
+    },
+    "regressor_metrics": {
+        "rmse": 0.130463,
+        "mae": 0.0,
+        "r2": 0.977405
+    },
+    "shap_available": false,
+    "calibration_applied": false,
+    "original_feature_count": 19,
+    "risk_levels": [
+        "High",
+        "Low",
+        "Medium"
+    ]
+}

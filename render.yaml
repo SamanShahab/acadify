@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: acadify-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: SECRET_KEY
+        sync: false
+      - key: DB_NAME
+        value: nexus_db
+      - key: DEBUG
+        value: "False"
+      - key: FLASK_ENV
+        value: production
