@@ -7,8 +7,6 @@ Uses:
 """
 import os
 import threading
-import numpy as np
-import cv2
 
 # Lower = stricter match. Cosine distance range: 0 (identical) -> 1 (opposite)
 FACE_MATCH_THRESHOLD = float(os.environ.get('FACE_MATCH_THRESHOLD', '0.40'))
@@ -165,6 +163,8 @@ class FaceRecognizer:
         - Resize to 160×160
         - Standardize per-image (mean=0, std=1) — same as FaceNet training
         """
+        import numpy as np
+        import cv2
         top, right, bottom, left = face_location
         face = image_rgb[top:bottom, left:right]
         if face.size == 0:
@@ -178,6 +178,7 @@ class FaceRecognizer:
 
     def _embed(self, model_input):
         """Run inference and return L2-normalised embedding."""
+        import numpy as np
         model = _get_model()
         with _inference_lock:
             emb = model.predict(model_input, verbose=0)[0]
@@ -222,6 +223,7 @@ class FaceRecognizer:
     @staticmethod
     def _cosine_distance(a, b):
         """Cosine distance [0, 1]. Both vectors must be L2-normalised."""
+        import numpy as np
         return 1.0 - float(np.clip(np.dot(a, b), -1.0, 1.0))
 
     def identify(self, image_rgb, known_students):
@@ -252,6 +254,7 @@ class FaceRecognizer:
         for student in known_students:
             for emb in student.get('face_embeddings', []):
                 try:
+                    import numpy as np
                     ref  = np.array(emb, dtype='float32')
                     norm = np.linalg.norm(ref)
                     ref  = ref / norm if norm > 1e-10 else ref   # normalise stored embeddings too

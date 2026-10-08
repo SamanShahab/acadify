@@ -4,7 +4,6 @@ Never reloads on each request; instantiate once and reuse.
 """
 import os
 import pickle
-import numpy as np
 
 # Prefer the trained AI_FACE_PROJECT artifacts, with the existing copy as fallback.
 _BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -73,6 +72,7 @@ class EmotionModel:
             return {'success': False, 'error': 'Emotion model not loaded'}
         try:
             import cv2
+            import numpy as np
             img = face_bgr_or_gray
             # Convert to grayscale if needed
             if len(img.shape) == 3 and img.shape[2] == 3:
