@@ -25,9 +25,10 @@ def login():
             return jsonify({'authenticated': True, 'role': current_user.role})
         return jsonify({'authenticated': False})
 
-    # POST
-    email = request.form.get('email', '').strip()
-    password = request.form.get('password', '')
+    # POST — accept both JSON and form data
+    data = request.get_json(silent=True) or request.form
+    email = data.get('email', '').strip()
+    password = data.get('password', '')
 
     if not email or not password:
         return jsonify({'status': 'error', 'message': 'Please enter both email and password.'}), 400
